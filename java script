@@ -1,0 +1,32 @@
+// Quiz function
+function checkAnswer(option) {
+  const result = document.getElementById("quizResult");
+  if (option === "b") {
+    result.textContent = "✅ Correct! HTML stands for Hyper Text Markup Language.";
+  } else {
+    result.textContent = "❌ Try again!";
+  }
+}
+
+// Filter projects
+function filterProjects(category) {
+  const projects = document.querySelectorAll(".project");
+  projects.forEach(p => {
+    if (category === "all" || p.classList.contains(category)) {
+      p.style.display = "block";
+    } else {
+      p.style.display = "none";
+    }
+  });
+}
+
+// Form handlers
+document.getElementById("joinForm").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("🎉 Thank you for registering!");
+});
+
+document.getElementById("newsletterForm").addEventListener("submit", e => {
+  e.preventDefault();
+  alert("📩 You are subscribed to the newsletter!");
+});
